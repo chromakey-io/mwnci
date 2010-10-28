@@ -1,0 +1,11 @@
+libraries/*
+spawning/*
+eventlet/*
+media/*
+django/*
+error.log
+.bash_history
+.bashrc
+*.pyc
+*.bak
+*.swp

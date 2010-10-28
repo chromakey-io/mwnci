@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link href="{{MEDIA_URL}}css/base.css" media="screen" rel="Stylesheet" type="text/css" />
+    <style>
+        {{page.extra_style}}
+    </style>
+    <title>MWNCI - {{page.title}}</title>
+		<!--[if IE]>
+			<style>
+				body{height: 100%;}
+				.container{margin-top: 15px}
+			</style>
+		<![endif]-->
+		<!--[if lt IE 8]>
+<![endif]-->
+</head>
+ 	
+<body>
+<div id="wrapper">
+<div id="content-wrapper">
+
+    <div id="header">
+    </div><!-- end header -->
+
+ <div id="content">
+    
+    {% if page.left %}
+	<div id="left-column">
+    
+    {% if page.get_related_pages %}
+    <div id = "sub-nav">
+        <ul>
+            {% for p in page.type.page_set.all %}
+                {% ifequal p page %}
+                <li><h1>{{p.name}}</h1></li>
+                {% else %}
+                <li><a href="{{p.get_absolute_url}}">{{p.name}}</a></li>
+                {% endifequal %}
+            {% endfor %}
+        </ul>
+    </div>
+    <br>
+    <br>
+    <br>
+    {% else %}
+    <div id = "sub-nav">
+    </div>
+    {% endif %}
+    {% for widget in page.left %}
+        {% if widget.image %}
+		<div class="image" id="{{widget.name|slugify}}"><img src="{{widget.image.url}}"/></div>
+        {% endif %}
+        {% if widget.html %}
+            {{widget.html|safe}}
+        {% endif %}
+        {% if widget.href %}
+        <h3 class="link-title"><a href = "{{widget.href}}">{{widget.name}}</a></h3>
+        {% endif %}
+        <div class="description">
+            {{widget.description|safe}}
+        </div>
+        {% endfor %}
+	</div>
+    {% endif %}
+    
+    {% if page.center %}
+	<div id="center-column">
+    {% for widget in page.center %}
+        {% if widget.image %}
+		<div class="image" id="{{widget.name|slugify}}"><img src="{{widget.image.url}}"/></div>
+        {% endif %}
+        {% if widget.html %}
+            {{widget.html|safe}}
+        {% endif %}
+        {% if widget.href %}
+        <h3 class="link-title"><a href = "{{widget.href}}">{{widget.name}}</a></h3>
+        {% endif %}
+        <div class="description">
+            {{widget.description|safe}}
+        </div>
+    {% endfor %}
+    {% if page.body %}
+       <div id = "main-text">
+         {{page.body|safe}}
+       </div>
+    {% endif %}
+
+
+	</div>
+    {% endif %}
+    
+    {% if page.right %}
+	<div id="right-column">
+    {% for widget in page.right %}
+        {% if widget.image %}
+		<div class="image" id="{{widget.name|slugify}}"><img src="{{widget.image.url}}"/></div>
+        {% endif %}
+        {% if widget.html %}
+            {{widget.html|safe}}
+        {% endif %}
+        {% if widget.href %}
+        <h3 class="link-title"><a href = "{{widget.href}}">{{widget.name}}</a></h3>
+        {% endif %}
+        <div class="description">
+            {{widget.description|safe}}
+        </div>
+    {% endfor %}
+	</div>
+    {% endif %}
+ </div>
+<div id="footer">
+  <div id="nav">
+    <ul>
+    {% for type in types %}
+      <li id = "{{type.name|slugify}}"><a href="/{{type.path}}/">{{type.name}}</a></li>
+    {% endfor %}
+    </ul>
+  </div><!-- end nav -->
+</div>
+
+
+
+</div><!-- end wrapper -->
+</div><!-- end content-wrapper -->
+</body>
+
+</html>
