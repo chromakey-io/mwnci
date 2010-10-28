@@ -1,0 +1,25 @@
+This is the engine for my personal website and a few that i've made for friends.
+
+I've tried to make it as flexible as possible.  You can create pages and page-types.  You can have a main page for each type, and the rest are all sub-pages ... ie:
+
+/about/
+  /about/hamburgers/
+  /about/cheese/
+
+There is also a wigdets module that allows you to attach media or html modules to pages.  You can order and position them.
+
+There are also "themes".  This just allows you to upload your own django template ... and attach it to pages you want to have rendered against said template.
+
+There's also a articles app, I don't remember what it does ... probably something like a blog .. .haven't tested/used it yet... heh.
+
+Some stuff I didn't include in the repo cause it's public...
+
+/libararies contains johnny  lumberjack  memcache.py  memcache.pyc  memcache_status  south
+
+django, spawning, and eventlet all live in the base directory.
+
+/bin has startup scripts for spawning in it
+
+If anyone actually uses this ... um tell me how to make it actually useful for someone other than me... and I will.
+
+
