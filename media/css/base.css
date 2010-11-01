@@ -1,0 +1,109 @@
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+li {list-style:none;}
+q:before,q:after{content:'';}
+abbr,acronym {border:0;font-variant:normal;}
+sup,sub {line-height:-1px;vertical-align: text-top;}
+sub {vertical-align:text-bottom;}
+input, textarea, select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+
+@font-face { font-family: gothicstd; src: url('gothic.otf'); } 
+
+body,html{height:100%;background:gray;}
+
+#content-wrapper{margin: 0 auto;height:100%;}
+#wrapper{background: gray;height:100%;}
+
+#header div a img{padding:10px;width:60%;}
+
+#content{
+    width: 100%;
+    overflow:auto;
+    display:table;
+    background: gray;
+}
+#left-column {
+   display:table-cell;
+   vertical-align:middle;
+   padding-left:2em;
+   padding-right:1em;}
+#right-column{
+   display:table-cell;
+   vertical-align:middle;
+   padding:2em;}
+#center-column{
+   display:table-cell;
+   vertical-align:middle;
+   text-align:center;
+}
+#footer{
+    margin-top:40px;
+    display: block;
+    background:darkgray;
+    padding-top: 1em;
+    text-align:center;
+    font-size:10pt;
+    background-size: 100%;
+    -webkit-box-shadow: black 0px 0px 60px;
+}
+
+a{ color:#orange; text-decoration:none;}
+a:hover{color:#68b325; text-decoration:none;}
+
+p{ 
+   line-height: 1.5em;
+   padding: 8px 0px; 
+   letter-spacing:1px;
+}
+
+h1{font-size:20pt;font-family: gothicstd;}
+h3{ color: white; font-size: 11pt; margin-top: 1em;}
+h3 a{text-decoration: none;}
+
+#main-text{
+    font-family:gothicstd;
+    font-size:12pt;
+    color:white;
+    text-align:left;
+    padding:20px;
+}
+
+.link-title{font-size: 1.2em; margin-top: 1em; margin-bottom:0.6em;}
+.description{color: #221C15; font-size: 0.9em; line-height: 1.5em; letter-spacing:1px;}
+
+#main-text h1{font-size:32pt;}
+
+#nav{
+    font-family:gothicstd;
+    font-size:14pt;
+    text-transform:uppercase;
+    height:25px;
+	}
+#nav ul, #nav ul li{
+    list-style:none;
+    margin:0;
+    padding:0;
+    }
+#nav ul{
+    text-align:center;
+    }
+#nav ul li{
+    display:inline;
+    margin-right:.75em;
+    }
+#sub-nav{
+    margin-top:10px;
+	font-family:gothicstd;
+    font-size:12pt;
+    text-transform:uppercase;
+    }
+#nav ul li a{text-decoration: none; color: black;}
+#nav ul li a:hover{text-decoration: none; color: gray;}
+
+#sub-nav ul li{float:left; padding-left:24px; padding-top:24px;}
+#main-title{padding-top:24px;}
+
+#social{ position: absolute; right: 0; padding: 1em; z-index: 2;}
+#social li{display: inline;}

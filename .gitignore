@@ -1,7 +1,9 @@
 libraries/*
 spawning/*
 eventlet/*
-media/*
+media/uploaded-images/*
+media/templates/*
+media/admin/*
 django/*
 error.log
 .bash_history

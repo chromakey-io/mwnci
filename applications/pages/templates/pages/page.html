@@ -67,7 +67,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	</div>
     {% endif %}
     
-    {% if page.center %}
+    {% if page.center or page.body %}
 	<div id="center-column">
     {% for widget in page.center %}
         {% if widget.image %}
@@ -83,14 +83,13 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
             {{widget.description|safe}}
         </div>
     {% endfor %}
-    {% if page.body %}
+
+       {% if page.body %}
        <div id = "main-text">
          {{page.body|safe}}
        </div>
-    {% endif %}
-
-
-	</div>
+       {% endif %}
+    </div>
     {% endif %}
     
     {% if page.right %}

@@ -6,7 +6,7 @@ LIBRARIES = os.path.join(os.path.dirname(__file__), 'libraries')
 sys.path.insert(0, APPLICATIONS)
 sys.path.insert(0, LIBRARIES)
 
-DEBUG = True
+DEBUG = False 
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -50,7 +50,7 @@ LOGGING = {
         },
     },
     'loggers' : {
-        'django.errors' : {
+        'django' : {
             'level' : 'INFO',
             'handlers' : ['file', 'stream'],
         },
@@ -135,9 +135,27 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.humanize',
 
+    'djcelery',
     'lumberjack',
     'south',
     'johnny',
     'pages',
     'memcache_status',
+    'backends',
 )
+
+DEFAULT_FILE_STORAGE = 'backends.S3.SimpleStorage'
+
+import djcelery
+djcelery.setup_loader()
+
+BROKER_HOST = "localhost"
+BROKER_PORT = 5672
+BROKER_USER = "guest"
+BROKER_PASSWORD = "guest"
+BROKER_VHOST = "/"
+
+try:
+    from amazon_settings import *
+except ImportError:
+    pass
