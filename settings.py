@@ -30,6 +30,7 @@ DATABASES = {
 }
 
 LOGGING = {
+    'version': 1,
     'formatters': {
         'default' : {
             'format' : '%(levelname)s ++ %(message)s',
@@ -43,6 +44,13 @@ LOGGING = {
             'formatter': 'default',
             'level' : 'NOTSET',
         },
+        'access_log' : {
+            'class' : 'logging.FileHandler',
+            'filename' : '/var/www/mwnci/access.log',
+            'mode' : 'a',
+            'formatter' : 'default',
+            'level' : 'NOTSET',
+        },
         'stream' : {
             'class' : 'logging.StreamHandler',
             'formatter' : 'default',
@@ -53,6 +61,14 @@ LOGGING = {
         'django' : {
             'level' : 'INFO',
             'handlers' : ['file', 'stream'],
+        },
+        'eventlet.wsgi' : {
+            'level' : 'INFO',
+            'handlers' : ['access_log'],
+        },
+        'Spawning' : {
+            'level' : 'INFO',
+            'handlers' : ['stream', 'access_log'],
         },
     },
 }
@@ -136,15 +152,15 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
 
     'djcelery',
-    'lumberjack',
+    #'lumberjack',
     'south',
     'johnny',
     'pages',
     'memcache_status',
-    'backends',
+    'simplestorage',
 )
 
-DEFAULT_FILE_STORAGE = 'backends.S3.SimpleStorage'
+DEFAULT_FILE_STORAGE = 'simplestorage.S3.SimpleStorage'
 
 import djcelery
 djcelery.setup_loader()

@@ -11,10 +11,10 @@ input, textarea, select{font-family:inherit;font-size:inherit;font-weight:inheri
 
 @font-face { font-family: gothicstd; src: url('gothic.otf'); } 
 
-body,html{height:100%;background:gray;}
+body,html{height:100%;background:WhiteSmoke;}
 
 #content-wrapper{margin: 0 auto;height:100%;}
-#wrapper{background: gray;height:100%;}
+#wrapper{background:WhiteSmoke;height:100%;}
 
 #header div a img{padding:10px;width:60%;}
 
@@ -22,7 +22,7 @@ body,html{height:100%;background:gray;}
     width: 100%;
     overflow:auto;
     display:table;
-    background: gray;
+    background: WhiteSmoke;
 }
 #left-column {
    display:table-cell;
@@ -41,7 +41,7 @@ body,html{height:100%;background:gray;}
 #footer{
     margin-top:40px;
     display: block;
-    background:darkgray;
+    background:Gainsboro;
     padding-top: 1em;
     text-align:center;
     font-size:10pt;
@@ -59,13 +59,13 @@ p{
 }
 
 h1{font-size:20pt;font-family: gothicstd;}
-h3{ color: white; font-size: 11pt; margin-top: 1em;}
+h3{ color: gray; font-size: 11pt; margin-top: 1em;}
 h3 a{text-decoration: none;}
 
 #main-text{
     font-family:gothicstd;
     font-size:12pt;
-    color:white;
+    color:gray;
     text-align:left;
     padding:20px;
 }
