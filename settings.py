@@ -158,6 +158,7 @@ INSTALLED_APPS = (
     'pages',
     'memcache_status',
     'simplestorage',
+    'userfiles',
 )
 
 DEFAULT_FILE_STORAGE = 'simplestorage.S3.SimpleStorage'
